@@ -7,9 +7,6 @@ app.get('/api', (req, res) => {
     console.log("hello")
     const { slack_name, track } = req.query;
 
-    
-    const isoString = now.toISOString().slice(0,19)+'Z';
-
 
     // Validate the 'offset' parameter to be within +/- 2
     const offsetValue = parseInt(1);
@@ -20,6 +17,8 @@ app.get('/api', (req, res) => {
 
     const now = new Date();
     now.setUTCHours(now.getUTCHours() + offsetValue);
+
+    const isoString = now.toISOString().slice(0,19)+'Z';
 
     var stat_code = res.statusCode
 
