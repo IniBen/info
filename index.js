@@ -26,7 +26,7 @@ app.get('/info', (req, res) => {
         current_day: now.toLocaleString('en-US', { weekday: 'long' }),
         utc_time: now.toISOString(),
         track: track,
-        github_file_url: 'https://github.com/IniBen/info/blob/main/index.js',
+        github_file_url: 'https://github.com/IniBen/info/blob/master/index.js',
         github_repo_url: 'https://github.com/IniBen/info',
         status_code: stat_code.toString()
     };
