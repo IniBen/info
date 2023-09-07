@@ -7,7 +7,9 @@ app.get('/api', (req, res) => {
     console.log("hello")
     const { slack_name, track } = req.query;
 
-    console.log("queries", slack_name)
+    
+    const isoString = now.toISOString().slice(0,19)+'Z';
+
 
     // Validate the 'offset' parameter to be within +/- 2
     const offsetValue = parseInt(1);
@@ -24,7 +26,7 @@ app.get('/api', (req, res) => {
     const info = {
         slack_name: slack_name || 'Unknown',
         current_day: now.toLocaleString('en-US', { weekday: 'long' }),
-        utc_time: now.toISOString(),
+        utc_time: isoString,
         track: track,
         github_file_url: 'https://github.com/IniBen/info/blob/master/index.js',
         github_repo_url: 'https://github.com/IniBen/info',
