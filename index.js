@@ -9,7 +9,7 @@ app.get('/api', (req, res) => {
 
 
     // Validate the 'offset' parameter to be within +/- 2
-    const offsetValue = parseInt(1);
+    const offsetValue = parseInt(0);
     if (isNaN(offsetValue) || Math.abs(offsetValue) > 2) {
         return res.status(400).json({ error: 'Invalid offset value. It should be between -2 and 2.' });
     }
