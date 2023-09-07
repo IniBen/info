@@ -3,7 +3,7 @@ const app = express();
 const port = 3046; // You can change this to your desired port
 
 // Define a route that accepts two GET parameters
-app.get('/info', (req, res) => {
+app.get('/api', (req, res) => {
     console.log("hello")
     const { slack_name, track } = req.query;
 
